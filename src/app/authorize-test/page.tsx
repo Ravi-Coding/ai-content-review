@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function AuthorizeTestPage() {
   const [role, setRole] = useState('user');
-  const [resource, setResource] = useState('submission');
+  const [resource] = useState('submission');
   const [action, setAction] = useState('create');
   const [result, setResult] = useState<null | boolean>(null);
 

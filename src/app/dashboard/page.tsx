@@ -2,7 +2,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 type Role = 'admin' | 'moderator' | 'user';
 
@@ -12,11 +11,21 @@ const actions: Record<Role, string[]> = {
   user: [],
 };
 
+// type Submission = {
+//     id: string;
+//     content: string;
+//     submittedBy: string;
+//     status: 'pending' | 'approved' | 'deleted';
+//   };
+  
+
 
 export default function DashboardPage() {
-    
+
   const [role, setRole] = useState('user');
   const [submissions, setSubmissions] = useState<any[]>([]);
+  
+
 
   useEffect(() => {
     const stored = localStorage.getItem('submissions');
